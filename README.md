@@ -1,11 +1,13 @@
 # Dotfiles
 
-Personal Linux development environment configuration files.
+Personal Linux development environment configuration files of mine.
 
 ## Tools
 
 * Alacritty
+* grub
 * Neovim (Kickstart.nvim based)
+* obsidian
 * Starship prompt
 
 ## Theme
@@ -13,36 +15,34 @@ Personal Linux development environment configuration files.
 * Catppuccin Mocha
 * JetBrainsMono Nerd Font
 
-## Structure
-.
-├── alacritty
-├── nvim
-└── starship
-
 ## Setup
 
 Clone the repository:
 
-git clone <your-repo-url>
-
+```
+git clone [dotfiles](https://github.com/Shanwis/dotfiles)
+```
 
 ### Alacritty
 
+```
 ln -s ~/Data/PROJECTS/dotfiles/alacritty ~/.config/alacritty
+```
 
 ### Neovim
-
+```
 ln -s ~/Data/PROJECTS/dotfiles/nvim ~/.config/nvim
+```
 
 ### Starship
-
+```
 ln -s ~/Data/PROJECTS/dotfiles/starship/starship.toml ~/.config/starship.toml
+```
 
-## Requirements
-
-* Nerd Fonts
-* Neovim
-* Alacritty
-* Starship
-* tmux (optional)
-
+### Obsidian
+To sync up your configuration to the repo run
+```
+cd obsidian
+chmod +x sync.sh
+./sync.sh
+```
