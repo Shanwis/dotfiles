@@ -1,0 +1,531 @@
+{
+  "choices": [
+    {
+      "id": "a3d7a3e7-b256-4356-abad-5eac1e80392a",
+      "name": "Add notes",
+      "type": "Multi",
+      "command": true,
+      "choices": [
+        {
+          "id": "7190f210-9695-4ddb-94b0-77c62fd41606",
+          "name": "Scratch",
+          "type": "Macro",
+          "command": false,
+          "runOnStartup": false,
+          "macro": {
+            "name": "Scratch",
+            "id": "432f69c8-e167-4317-84f0-5a92a05c2a1a",
+            "commands": [
+              {
+                "name": "Creating scratch",
+                "type": "NestedChoice",
+                "id": "a5bb187f-2b39-4cfb-a91c-1f7857f4e4f7",
+                "choice": {
+                  "id": "5a9b8463-349a-4055-acfb-6ca2b4bb65e2",
+                  "name": "Creating scratch",
+                  "type": "Template",
+                  "command": false,
+                  "templatePath": "Templates/Lab.md",
+                  "fileNameFormat": {
+                    "enabled": true,
+                    "format": "{{VALUE:Title}} {{DATE:}}"
+                  },
+                  "folder": {
+                    "enabled": true,
+                    "folders": [
+                      "Scratch"
+                    ],
+                    "chooseWhenCreatingNote": false,
+                    "createInSameFolderAsActiveFile": false,
+                    "chooseFromSubfolders": false
+                  },
+                  "appendLink": false,
+                  "openFile": true,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "fileExistsBehavior": {
+                    "kind": "prompt"
+                  }
+                }
+              },
+              {
+                "name": "Add to daily note",
+                "type": "NestedChoice",
+                "id": "d18acf25-293e-4e78-94e8-8b970327cee7",
+                "choice": {
+                  "id": "d7944b9d-5819-46c9-be05-efac94526a6f",
+                  "name": "Add to daily note",
+                  "type": "Capture",
+                  "command": false,
+                  "appendLink": false,
+                  "captureTo": "Daily/{{DATE}}",
+                  "captureToActiveFile": false,
+                  "captureToCanvasNodeId": "",
+                  "activeFileWritePosition": "cursor",
+                  "createFileIfItDoesntExist": {
+                    "enabled": true,
+                    "createWithTemplate": true,
+                    "template": "Templates/Daily.md"
+                  },
+                  "format": {
+                    "enabled": true,
+                    "format": "- {{HH:mm}} {{VALUE:Title}} {{DATE:}}\n"
+                  },
+                  "insertAfter": {
+                    "enabled": true,
+                    "after": "## 🔗 Notes Created",
+                    "insertAtEnd": true,
+                    "considerSubsections": false,
+                    "createIfNotFound": false,
+                    "createIfNotFoundLocation": "top",
+                    "inline": false,
+                    "replaceExisting": false,
+                    "blankLineAfterMatchMode": "auto"
+                  },
+                  "newLineCapture": {
+                    "enabled": false,
+                    "direction": "below"
+                  },
+                  "prepend": false,
+                  "task": false,
+                  "openFile": false,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "templater": {
+                    "afterCapture": "none"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "180d8339-031d-4762-88d4-5bda4a41fdbf",
+          "name": "DSA",
+          "type": "Macro",
+          "command": false,
+          "runOnStartup": false,
+          "macro": {
+            "name": "DSA",
+            "id": "2503b434-a3ef-4a13-9c02-021240447bc1",
+            "commands": [
+              {
+                "name": "Creating DSA notes",
+                "type": "NestedChoice",
+                "id": "f5890b65-7eda-4f2a-a223-fce224c3c4e0",
+                "choice": {
+                  "id": "5a9b8463-349a-4055-acfb-6ca2b4bb65e2",
+                  "name": "Creating DSA notes",
+                  "type": "Template",
+                  "command": false,
+                  "templatePath": "Templates/DSA.md",
+                  "fileNameFormat": {
+                    "enabled": true,
+                    "format": "{{VALUE:Title}}"
+                  },
+                  "folder": {
+                    "enabled": true,
+                    "folders": [
+                      "Notes"
+                    ],
+                    "chooseWhenCreatingNote": false,
+                    "createInSameFolderAsActiveFile": false,
+                    "chooseFromSubfolders": false
+                  },
+                  "appendLink": false,
+                  "openFile": true,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "fileExistsBehavior": {
+                    "kind": "prompt"
+                  }
+                }
+              },
+              {
+                "name": "Add to daily note",
+                "type": "NestedChoice",
+                "id": "81cd3f25-77d4-4dd2-b706-dcf7c0658629",
+                "choice": {
+                  "id": "d7944b9d-5819-46c9-be05-efac94526a6f",
+                  "name": "Add to daily note",
+                  "type": "Capture",
+                  "command": false,
+                  "appendLink": false,
+                  "captureTo": "Daily/{{DATE}}",
+                  "captureToActiveFile": false,
+                  "captureToCanvasNodeId": "",
+                  "activeFileWritePosition": "cursor",
+                  "createFileIfItDoesntExist": {
+                    "enabled": true,
+                    "createWithTemplate": true,
+                    "template": "Templates/Daily.md"
+                  },
+                  "format": {
+                    "enabled": true,
+                    "format": "- {{HH:mm}} {{VALUE:Title}}\n\n"
+                  },
+                  "insertAfter": {
+                    "enabled": true,
+                    "after": "## 🔗 Notes Created",
+                    "insertAtEnd": true,
+                    "considerSubsections": false,
+                    "createIfNotFound": false,
+                    "createIfNotFoundLocation": "top",
+                    "inline": false,
+                    "replaceExisting": false,
+                    "blankLineAfterMatchMode": "auto"
+                  },
+                  "newLineCapture": {
+                    "enabled": false,
+                    "direction": "below"
+                  },
+                  "prepend": false,
+                  "task": false,
+                  "openFile": false,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "templater": {
+                    "afterCapture": "none"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "22f59abf-1442-4c44-a82f-208be5864da1",
+          "name": "Lab",
+          "type": "Macro",
+          "command": false,
+          "runOnStartup": false,
+          "macro": {
+            "name": "Lab",
+            "id": "a80dc880-9096-4f04-a399-59db9f9c4a4b",
+            "commands": [
+              {
+                "name": "Creating lab",
+                "type": "NestedChoice",
+                "id": "31ae2410-6dad-4ab2-964c-66650188fc66",
+                "choice": {
+                  "id": "5a9b8463-349a-4055-acfb-6ca2b4bb65e2",
+                  "name": "Creating lab",
+                  "type": "Template",
+                  "command": false,
+                  "templatePath": "Templates/Lab.md",
+                  "fileNameFormat": {
+                    "enabled": true,
+                    "format": "{{VALUE:Title}}"
+                  },
+                  "folder": {
+                    "enabled": true,
+                    "folders": [
+                      "College"
+                    ],
+                    "chooseWhenCreatingNote": false,
+                    "createInSameFolderAsActiveFile": false,
+                    "chooseFromSubfolders": false
+                  },
+                  "appendLink": false,
+                  "openFile": true,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "fileExistsBehavior": {
+                    "kind": "prompt"
+                  }
+                }
+              },
+              {
+                "name": "Add to daily note",
+                "type": "NestedChoice",
+                "id": "12ba446a-87bb-4e5c-b4f2-678e585e44fe",
+                "choice": {
+                  "id": "d7944b9d-5819-46c9-be05-efac94526a6f",
+                  "name": "Add to daily note",
+                  "type": "Capture",
+                  "command": false,
+                  "appendLink": false,
+                  "captureTo": "Daily/{{DATE}}",
+                  "captureToActiveFile": false,
+                  "captureToCanvasNodeId": "",
+                  "activeFileWritePosition": "cursor",
+                  "createFileIfItDoesntExist": {
+                    "enabled": true,
+                    "createWithTemplate": true,
+                    "template": "Templates/Daily.md"
+                  },
+                  "format": {
+                    "enabled": true,
+                    "format": "- {{HH:mm}} {{VALUE:Title}} "
+                  },
+                  "insertAfter": {
+                    "enabled": true,
+                    "after": "## 🔗 Notes Created",
+                    "insertAtEnd": true,
+                    "considerSubsections": false,
+                    "createIfNotFound": false,
+                    "createIfNotFoundLocation": "top",
+                    "inline": false,
+                    "replaceExisting": false,
+                    "blankLineAfterMatchMode": "auto"
+                  },
+                  "newLineCapture": {
+                    "enabled": false,
+                    "direction": "below"
+                  },
+                  "prepend": false,
+                  "task": false,
+                  "openFile": false,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "templater": {
+                    "afterCapture": "none"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "d3057257-965a-4222-8e83-3c131c3130a5",
+          "name": "Project",
+          "type": "Macro",
+          "command": false,
+          "runOnStartup": false,
+          "macro": {
+            "name": "Project",
+            "id": "08372a51-d8dc-4412-b871-f956b2830c64",
+            "commands": [
+              {
+                "name": "Creating project",
+                "type": "NestedChoice",
+                "id": "36a02340-28f3-41f6-9ece-f19c6c50ffab",
+                "choice": {
+                  "id": "5a9b8463-349a-4055-acfb-6ca2b4bb65e2",
+                  "name": "Creating project",
+                  "type": "Template",
+                  "command": false,
+                  "templatePath": "Templates/Project.md",
+                  "fileNameFormat": {
+                    "enabled": true,
+                    "format": "{{VALUE:Title}}"
+                  },
+                  "folder": {
+                    "enabled": true,
+                    "folders": [
+                      "Projects"
+                    ],
+                    "chooseWhenCreatingNote": false,
+                    "createInSameFolderAsActiveFile": false,
+                    "chooseFromSubfolders": false
+                  },
+                  "appendLink": false,
+                  "openFile": true,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "fileExistsBehavior": {
+                    "kind": "prompt"
+                  }
+                }
+              },
+              {
+                "name": "Add to daily note",
+                "type": "NestedChoice",
+                "id": "f4646a40-0f57-4bf2-af8d-d96926148fc8",
+                "choice": {
+                  "id": "d7944b9d-5819-46c9-be05-efac94526a6f",
+                  "name": "Add to daily note",
+                  "type": "Capture",
+                  "command": false,
+                  "appendLink": false,
+                  "captureTo": "Daily/{{DATE}}",
+                  "captureToActiveFile": false,
+                  "captureToCanvasNodeId": "",
+                  "activeFileWritePosition": "cursor",
+                  "createFileIfItDoesntExist": {
+                    "enabled": true,
+                    "createWithTemplate": true,
+                    "template": "Templates/Daily.md"
+                  },
+                  "format": {
+                    "enabled": true,
+                    "format": "- {{HH:mm}} {{VALUE:Title}}\n\n"
+                  },
+                  "insertAfter": {
+                    "enabled": true,
+                    "after": "## 🔗 Notes Created",
+                    "insertAtEnd": true,
+                    "considerSubsections": false,
+                    "createIfNotFound": false,
+                    "createIfNotFoundLocation": "top",
+                    "inline": false,
+                    "replaceExisting": false,
+                    "blankLineAfterMatchMode": "auto"
+                  },
+                  "newLineCapture": {
+                    "enabled": false,
+                    "direction": "below"
+                  },
+                  "prepend": false,
+                  "task": false,
+                  "openFile": false,
+                  "fileOpening": {
+                    "location": "tab",
+                    "direction": "vertical",
+                    "mode": "default",
+                    "focus": true
+                  },
+                  "templater": {
+                    "afterCapture": "none"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "collapsed": false
+    }
+  ],
+  "inputPrompt": "single-line",
+  "persistInputPromptDrafts": true,
+  "useSelectionAsCaptureValue": true,
+  "devMode": false,
+  "templateFolderPath": "Templates",
+  "announceUpdates": "major",
+  "version": "2.12.3",
+  "globalVariables": {},
+  "onePageInputEnabled": false,
+  "disableOnlineFeatures": true,
+  "enableRibbonIcon": false,
+  "showCaptureNotification": true,
+  "showInputCancellationNotification": false,
+  "enableTemplatePropertyTypes": false,
+  "dateAliases": {
+    "t": "today",
+    "tm": "tomorrow",
+    "yd": "yesterday",
+    "nw": "next week",
+    "nm": "next month",
+    "ny": "next year",
+    "lw": "last week",
+    "lm": "last month",
+    "ly": "last year"
+  },
+  "ai": {
+    "defaultModel": "Ask me",
+    "defaultSystemPrompt": "As an AI assistant within Obsidian, your primary goal is to help users manage their ideas and knowledge more effectively. Format your responses using Markdown syntax. Please use the [[Obsidian]] link format. You can write aliases for the links by writing [[Obsidian|the alias after the pipe symbol]]. To use mathematical notation, use LaTeX syntax. LaTeX syntax for larger equations should be on separate lines, surrounded with double dollar signs ($$). You can also inline math expressions by wrapping it in $ symbols. For example, use $$w_{ij}^{\\text{new}}:=w_{ij}^{\\text{current}}+\\eta\\cdot\\delta_j\\cdot x_{ij}$$ on a separate line, but you can write \"($\\eta$ = learning rate, $\\delta_j$ = error term, $x_{ij}$ = input)\" inline.",
+    "promptTemplatesFolderPath": "",
+    "showAssistant": true,
+    "providers": [
+      {
+        "name": "OpenAI",
+        "endpoint": "https://api.openai.com/v1",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gpt-3.5-turbo",
+            "maxTokens": 4096
+          },
+          {
+            "name": "gpt-3.5-turbo-16k",
+            "maxTokens": 16384
+          },
+          {
+            "name": "gpt-3.5-turbo-1106",
+            "maxTokens": 16385
+          },
+          {
+            "name": "gpt-4",
+            "maxTokens": 8192
+          },
+          {
+            "name": "gpt-4-32k",
+            "maxTokens": 32768
+          },
+          {
+            "name": "gpt-4-1106-preview",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4-turbo",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o-mini",
+            "maxTokens": 128000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      },
+      {
+        "name": "Gemini",
+        "endpoint": "https://generativelanguage.googleapis.com",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gemini-1.5-pro",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash-8b",
+            "maxTokens": 1000000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      }
+    ]
+  },
+  "migrations": {
+    "migrateToMacroIDFromEmbeddedMacro": true,
+    "useQuickAddTemplateFolder": true,
+    "incrementFileNameSettingMoveToDefaultBehavior": true,
+    "consolidateFileExistsBehavior": true,
+    "repairTemplateFileExistsBehavior": true,
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
+    "setVersionAfterUpdateModalRelease": true,
+    "addDefaultAIProviders": true,
+    "removeMacroIndirection": true,
+    "migrateFileOpeningSettings": true,
+    "backfillFileOpeningDefaults": true,
+    "setProviderModelDiscoveryMode": true,
+    "migrateProviderApiKeysToSecretStorage": true
+  }
+}
