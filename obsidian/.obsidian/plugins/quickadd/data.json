@@ -25,7 +25,7 @@
                   "name": "Creating scratch",
                   "type": "Template",
                   "command": false,
-                  "templatePath": "Templates/Lab.md",
+                  "templatePath": "Templates/Scratch.md",
                   "fileNameFormat": {
                     "enabled": true,
                     "format": "{{VALUE:Title}} {{DATE:}}"
@@ -73,7 +73,7 @@
                   },
                   "format": {
                     "enabled": true,
-                    "format": "- {{HH:mm}} {{VALUE:Title}} {{DATE:}}\n"
+                    "format": "- {{DATE:HH:mm}} [[{{VALUE:Title}} {{DATE:}}]]\n"
                   },
                   "insertAfter": {
                     "enabled": true,
@@ -174,7 +174,7 @@
                   },
                   "format": {
                     "enabled": true,
-                    "format": "- {{HH:mm}} {{VALUE:Title}}\n\n"
+                    "format": "- {{DATE:HH:mm}} [[{{VALUE:Title}}]]\n\n"
                   },
                   "insertAfter": {
                     "enabled": true,
@@ -275,7 +275,7 @@
                   },
                   "format": {
                     "enabled": true,
-                    "format": "- {{HH:mm}} {{VALUE:Title}} "
+                    "format": "- {{DATE:HH:mm}} [[{{VALUE:Title}}]]\n"
                   },
                   "insertAfter": {
                     "enabled": true,
@@ -376,7 +376,7 @@
                   },
                   "format": {
                     "enabled": true,
-                    "format": "- {{HH:mm}} {{VALUE:Title}}\n\n"
+                    "format": "- {{DATE:HH:mm}} [[{{VALUE:Title}}]]\n\n\n"
                   },
                   "insertAfter": {
                     "enabled": true,
