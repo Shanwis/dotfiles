@@ -2,6 +2,10 @@
 
 Personal Linux development environment configuration files of mine.
 
+I am currently running fedora with niri as my WM and DankMaterialShell as my desktop shell.
+
+I might try out noctalia soon.
+
 ## Tools
 
 * Alacritty
@@ -9,6 +13,8 @@ Personal Linux development environment configuration files of mine.
 * Neovim (Kickstart.nvim based)
 * obsidian
 * Starship prompt
+* DankMaterialShell
+* Niri
 
 ## Theme
 
@@ -45,4 +51,14 @@ To sync up your configuration to the repo run
 cd obsidian
 chmod +x sync.sh
 ./sync.sh
+```
+
+### DankMaterialShell
+```
+ln -s ~/Data/PROJECTS/dotfiles/DankMaterialShell/ ~/.config/DankMaterialShell
+```
+
+### Niri
+```
+ln -s ~/Data/PROJECTS/dotfiles/niri/config.kdl ~/.config/niri/config.kdl
 ```
