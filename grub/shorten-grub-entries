@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ENTRY_DIR="/boot/loader/entries"
+
+# Find normal Fedora kernel entries, excluding rescue
+mapfile -t entries < <(
+    grep -l '^grub_class fedora$' "$ENTRY_DIR"/*.conf |
+    grep -v -- '-rescue\.conf$' |
+    while read -r file; do
+        version=$(awk '$1 == "version" {print $2}' "$file")
+        printf '%s\t%s\n' "$version" "$file"
+    done |
+    sort -V -r |
+    cut -f2
+)
+
+# Nothing to do
+if (( ${#entries[@]} == 0 )); then
+    exit 0
+fi
+
+# Newest kernel
+sed -i \
+    's/^title .*/title Fedora 44 (Workstation Edition) (Latest)/' \
+    "${entries[0]}"
+
+# Older kernel(s)
+for entry in "${entries[@]:1}"; do
+    sed -i \
+        's/^title .*/title Fedora 44 (Workstation Edition) (Old)/' \
+        "$entry"
+done
