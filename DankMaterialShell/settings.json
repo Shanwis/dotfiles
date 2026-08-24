@@ -250,7 +250,13 @@
   "browserPickerViewMode": "grid",
   "browserUsageHistory": {},
   "appPickerViewMode": "grid",
-  "filePickerUsageHistory": {},
+  "filePickerUsageHistory": {
+    "libreoffice-impress": {
+      "count": 2,
+      "lastUsed": 1787341445391,
+      "name": "LibreOffice Impress"
+    }
+  },
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
