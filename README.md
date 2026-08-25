@@ -4,7 +4,17 @@ Personal Linux development environment configuration files of mine.
 
 I am currently running fedora with niri as my WM and DankMaterialShell as my desktop shell.
 
-I might try out noctalia soon.
+My terminal emulator is currently Alacritty, thinking of switching to ghostty next.
+
+I currently using bash as my shell, planning on switching to zsh or fish.
+
+My terminal emulator is tmux and I am using the tmux plugin manager and currently have the catppucin/tmux plugin.
+
+I use obsidian for most of my note taking needs.
+
+I am currently trying to switch my coding to nvim, but that still requires a lot of configuration.
+
+For my AI-assisted coding I use OpenCode.
 
 ## Tools
 
@@ -15,6 +25,8 @@ I might try out noctalia soon.
 * Starship prompt
 * DankMaterialShell
 * Niri
+* tmux
+* yazi 
 
 ## Theme
 
