@@ -137,9 +137,7 @@ layout {
     // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
     preset-window-heights {
         proportion 0.25
-        proportion 0.33
         proportion 0.5
-        proportion 0.75
         proportion 1.0
     }
 
@@ -574,30 +572,20 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    // Cycle through widths set in preset-column-widths.
+    // Cycle through widths set in preset-column-widths anb preset-window-heights.
     Mod+R { switch-preset-column-width; }
-    // Cycling through the presets in reverse order is also possible.
     Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+Ctrl+R { switch-preset-window-height; }
+    Mod+Ctrl+Shift+R { reset-window-height; }
 
-    Mod+Ctrl+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
-
+    //Maximizing and changing to full screen and all
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-
-    // While maximize-column leaves gaps and borders around the window,
-    // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
-    // This bind corresponds to normal window maximizing,
-    // e.g. by double-clicking on the titlebar.
     Mod+M { maximize-window-to-edges; }
-
-    // Expand the focused column to space not taken up by other fully visible columns.
-    // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
+    //Centering in screen
     Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
     // Finer width adjustments.

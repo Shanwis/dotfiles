@@ -5,10 +5,5 @@ sort_by = "natural"
 linemode = "mtime"
 ratio = [0, 5, 3]
 
-[opener]
-edit = [
-    { run = "nvim %s", block = true, for = "unix" },
-]
-
 [input]
 cursor = true
