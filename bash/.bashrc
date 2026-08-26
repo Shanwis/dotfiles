@@ -50,3 +50,13 @@ eval "$(starship init bash)"
 # Environment variables
 export EDITOR=nvim
 export VISUAL=nvim
+
+# Commonly used functions
+
+homelab() {
+    if nc -z -w 1 192.168.29.19 22 2>/dev/null; then
+        ssh homelab-lan
+    else
+        ssh homelab-ts
+    fi
+}
