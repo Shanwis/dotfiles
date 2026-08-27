@@ -55,8 +55,10 @@ export VISUAL=nvim
 
 homelab() {
     if nc -z -w 1 192.168.29.19 22 2>/dev/null; then
+        echo "Connecting locally..."
         ssh homelab-lan
     else
+        echo "Connecting with tailscale..."
         ssh homelab-ts
     fi
 }
