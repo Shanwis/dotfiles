@@ -1,0 +1,6 @@
+include themes/catppuccin-mocha
+
+set selection-clipboard clipboard
+set window-title-basename true
+set adjust-open width
+set incremental-search true
