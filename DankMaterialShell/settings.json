@@ -7,7 +7,7 @@
   "matugenContrast": 0,
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
-  "popupTransparency": 1,
+  "popupTransparency": 0.3,
   "dockTransparency": 1,
   "widgetBackgroundColor": "sch",
   "widgetBackgroundCustomColor": "#6750A4",
@@ -46,8 +46,8 @@
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
-  "animationVariant": 0,
-  "motionEffect": 1,
+  "animationVariant": 4,
+  "motionEffect": 2,
   "m3ElevationEnabled": true,
   "m3ElevationIntensity": 12,
   "m3ElevationOpacity": 30,
@@ -57,10 +57,10 @@
   "modalElevationEnabled": true,
   "popoutElevationEnabled": true,
   "barElevationEnabled": true,
-  "blurEnabled": false,
+  "blurEnabled": true,
   "blurForegroundLayers": true,
   "blurLayerOutlineOpacity": 0.12,
-  "blurBorderEnabled": true,
+  "blurBorderEnabled": false,
   "blurBorderColor": "outline",
   "blurBorderCustomColor": "#ffffff",
   "blurBorderOpacity": 0.35,
@@ -599,7 +599,11 @@
           "enabled": true,
           "clockCompactMode": false
         },
-        "music"
+        {
+          "id": "music",
+          "enabled": true,
+          "mediaSize": 1
+        }
       ],
       "centerWidgets": [
         {
@@ -618,10 +622,10 @@
       "innerPadding": 0,
       "barInsetPadding": -1,
       "bottomGap": 0,
-      "transparency": 0.09,
+      "transparency": 0.15,
       "widgetTransparency": 0.6,
       "squareCorners": false,
-      "noBackground": false,
+      "noBackground": true,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
@@ -633,7 +637,7 @@
       "borderColor": "primary",
       "borderOpacity": 0.6,
       "borderThickness": 1,
-      "widgetOutlineEnabled": true,
+      "widgetOutlineEnabled": false,
       "widgetOutlineColor": "primary",
       "widgetOutlineOpacity": 0.5,
       "widgetOutlineThickness": 1,
