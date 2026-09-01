@@ -128,12 +128,18 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
     // off
-    // slowdown 3.0
+    slowdown 0.6
 
     window-open {
         duration-ms 0
         curve "ease-out-expo"
     }
+}
+
+//to make the background when in overview to be the wallpaper
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
 }
 
 // Work around WezTerm's initial configure bug

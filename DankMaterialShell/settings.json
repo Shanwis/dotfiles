@@ -67,7 +67,7 @@
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
-  "wallpaperBackgroundColorMode": "black",
+  "wallpaperBackgroundColorMode": "primary",
   "wallpaperBackgroundCustomColor": "#000000",
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
@@ -364,8 +364,8 @@
   "muteSoundsWhenMediaPlaying": true,
   "acMonitorTimeout": 600,
   "acLockTimeout": 300,
-  "acSuspendTimeout": 600,
-  "acSuspendBehavior": 0,
+  "acSuspendTimeout": 300,
+  "acSuspendBehavior": 2,
   "acProfileName": "",
   "acPostLockMonitorTimeout": 30,
   "batteryMonitorTimeout": 0,
@@ -536,7 +536,7 @@
     "restart",
     "hibernate"
   ],
-  "powerMenuDefaultAction": "logout",
+  "powerMenuDefaultAction": "suspend",
   "powerMenuGridLayout": false,
   "customPowerActionLock": "",
   "customPowerActionLogout": "",
@@ -566,6 +566,9 @@
         "name": "HDMI-A-1",
         "model": "BenQ GW2490"
       }
+    ],
+    "wallpaper": [
+      "all"
     ]
   },
   "showOnLastDisplay": {
@@ -634,7 +637,7 @@
       "bottomGap": 0,
       "transparency": 0.15,
       "widgetTransparency": 0.6,
-      "squareCorners": false,
+      "squareCorners": true,
       "noBackground": true,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
