@@ -2,3 +2,8 @@
 on  = "<C-n>"
 run = "shell -- dragon -x -i -T -a %s"
 desc = "Drag hovered file"
+
+[[mgr.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block'
+desc = "Open terminal here"
