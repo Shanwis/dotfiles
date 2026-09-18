@@ -16,7 +16,7 @@
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
   "cornerRadius": 12,
-  "niriLayoutGapsOverride": 11,
+  "niriLayoutGapsOverride": 6,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": 2,
   "hyprlandLayoutGapsOverride": -1,
@@ -308,7 +308,7 @@
       "enabled": true
     }
   ],
-  "networkPreference": "wifi",
+  "networkPreference": "ethernet",
   "iconThemeDark": "System Default",
   "iconThemeLight": "System Default",
   "iconThemePerMode": false,

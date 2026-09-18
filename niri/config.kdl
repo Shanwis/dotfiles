@@ -31,7 +31,7 @@ input {
 
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 12
+    gaps 6
 
     // "never": default, off-screen column stays at edge.
     // "always": focused column always centered.
@@ -113,6 +113,7 @@ layout {
 // xdg-desktop-autostart, which may be more convenient.
 // spawn-at-startup "waybar"
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-at-startup "/usr/bin/gnome-keyring-daemon" "--start" "--components=secrets"
 
 hotkey-overlay {
     skip-at-startup
@@ -167,8 +168,9 @@ window-rule {
 
 // Example: rounded corners for all windows.
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 4
     clip-to-geometry true
+    tiled-state true
 }
 
 // All windows at 80% opacity
