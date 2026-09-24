@@ -10,6 +10,9 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 
+# Go
+export PATH="/usr/local/go/bin:$PATH"
+
 # Environment Modules / MPI
 source /etc/profile.d/modules.sh
 module load mpi/openmpi-x86_64
@@ -46,6 +49,9 @@ export PATH="$HOME/.opencode/bin:$PATH"
 
 # Starship prompt
 eval "$(starship init bash)"
+
+# zoxide prompt
+eval "$(zoxide init bash)"
 
 # Environment variables
 export EDITOR=nvim
