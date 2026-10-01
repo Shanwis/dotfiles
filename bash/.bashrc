@@ -68,3 +68,7 @@ homelab() {
         ssh homelab-ts
     fi
 }
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/shanwis/.local/bin:$PATH"

@@ -31,7 +31,7 @@ input {
 
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 6
+    gaps 2
 
     // "never": default, off-screen column stays at edge.
     // "always": focused column always centered.
@@ -64,7 +64,7 @@ layout {
     // Alternatively override via window rule `draw-border-with-background`.
 
     focus-ring {
-        width 2
+        width 1
         active-color "#ffffff"
         inactive-color "#505050"
 
@@ -76,7 +76,7 @@ layout {
     // Similar to focus ring, but always visible.
     border {
         off
-        width 4
+        width 1
         active-color "#ffc87f"
         inactive-color "#505050"
         urgent-color "#9b0000"
