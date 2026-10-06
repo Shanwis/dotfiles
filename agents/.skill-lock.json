@@ -18,6 +18,36 @@
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-09-26T08:03:00.080Z",
       "updatedAt": "2026-09-26T08:03:00.080Z"
+    },
+    "webapp-testing": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/webapp-testing/SKILL.md",
+      "skillFolderHash": "5ffb7dc66b9fd4c25c3e400a4c00da99a349b714",
+      "pluginName": "example-skills",
+      "installedAt": "2026-10-04T12:54:37.147Z",
+      "updatedAt": "2026-10-04T12:54:37.147Z"
+    },
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "skillFolderHash": "82def67855a0d2aad7794207951820fa5422fdb0",
+      "pluginName": "agent-browser",
+      "installedAt": "2026-10-04T12:55:15.170Z",
+      "updatedAt": "2026-10-04T12:55:15.170Z"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "skillFolderHash": "d79e2a5bb4df4a386c2adcdd9ab8709bba28c3f6",
+      "pluginName": "example-skills",
+      "installedAt": "2026-10-04T12:55:46.768Z",
+      "updatedAt": "2026-10-04T12:55:46.768Z"
     }
   },
   "dismissed": {
