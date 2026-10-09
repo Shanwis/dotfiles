@@ -72,3 +72,6 @@ homelab() {
 
 # Added by Antigravity CLI installer
 export PATH="/home/shanwis/.local/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init bash)"
