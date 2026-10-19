@@ -248,7 +248,13 @@
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
   "browserPickerViewMode": "grid",
-  "browserUsageHistory": {},
+  "browserUsageHistory": {
+    "zen": {
+      "count": 1,
+      "lastUsed": 1792050742338,
+      "name": "Zen Browser"
+    }
+  },
   "appPickerViewMode": "grid",
   "filePickerUsageHistory": {
     "libreoffice-impress": {
@@ -265,6 +271,16 @@
       "count": 1,
       "lastUsed": 1790338490556,
       "name": "Brave Web Browser"
+    },
+    "libreoffice-calc": {
+      "count": 1,
+      "lastUsed": 1791637170349,
+      "name": "LibreOffice Calc"
+    },
+    "zen": {
+      "count": 1,
+      "lastUsed": 1791723627135,
+      "name": "Zen Browser"
     }
   },
   "sortAppsAlphabetically": false,
