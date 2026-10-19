@@ -37,40 +37,53 @@ For my AI-assisted coding I use OpenCode.
 
 Clone the repository:
 
-```
-git clone [dotfiles](https://github.com/Shanwis/dotfiles)
+```bash
+git clone https://github.com/Shanwis/dotfiles.git ~/Data/PROJECTS/dotfiles
+cd ~/Data/PROJECTS/dotfiles
 ```
 
-### Alacritty
+### Quick Setup (Recommended)
 
+Run the included automated bootstrap script to safely link all configurations with backup support:
+
+```bash
+chmod +x setup.sh
+./setup.sh
 ```
+
+---
+
+### Manual Setup
+
+If you prefer to symlink individual components manually:
+
+#### Shell & Terminal
+```bash
+ln -s ~/Data/PROJECTS/dotfiles/bash/.bashrc ~/.bashrc
 ln -s ~/Data/PROJECTS/dotfiles/alacritty ~/.config/alacritty
-```
-
-### Neovim
-```
-ln -s ~/Data/PROJECTS/dotfiles/nvim ~/.config/nvim
-```
-
-### Starship
-```
 ln -s ~/Data/PROJECTS/dotfiles/starship/starship.toml ~/.config/starship.toml
+ln -s ~/Data/PROJECTS/dotfiles/atuin/config.toml ~/.config/atuin/config.toml
 ```
 
-### Obsidian
-To sync up your configuration to the repo run
+#### Window Manager & Desktop
+```bash
+ln -s ~/Data/PROJECTS/dotfiles/niri ~/.config/niri
+ln -s ~/Data/PROJECTS/dotfiles/DankMaterialShell ~/.config/DankMaterialShell
 ```
+
+#### Multiplexer & CLI Tools
+```bash
+ln -s ~/Data/PROJECTS/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/Data/PROJECTS/dotfiles/tmux/tmux-new.sh ~/.local/bin/tmux-new.sh
+ln -s ~/Data/PROJECTS/dotfiles/nvim ~/.config/nvim
+ln -s ~/Data/PROJECTS/dotfiles/yazi ~/.config/yazi
+ln -s ~/Data/PROJECTS/dotfiles/zathura ~/.config/zathura
+```
+
+### Obsidian Configuration Backup
+To sync your vault configuration into the repository:
+```bash
 cd obsidian
 chmod +x sync.sh
-./sync.sh
-```
-
-### DankMaterialShell
-```
-ln -s ~/Data/PROJECTS/dotfiles/DankMaterialShell/ ~/.config/DankMaterialShell
-```
-
-### Niri
-```
-ln -s ~/Data/PROJECTS/dotfiles/niri/config.kdl ~/.config/niri/config.kdl
+./sync.sh <vault-name>
 ```

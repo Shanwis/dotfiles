@@ -21,14 +21,21 @@ if (( ${#entries[@]} == 0 )); then
     exit 0
 fi
 
+# Extract OS name and version dynamically from /etc/os-release
+if [ -f /etc/os-release ]; then
+    OS_TITLE="$(source /etc/os-release && echo "${NAME% Linux} ${VERSION}")"
+else
+    OS_TITLE="Linux"
+fi
+
 # Newest kernel
 sed -i \
-    's/^title .*/title Fedora 44 (Workstation Edition) (Latest)/' \
+    "s/^title .*/title ${OS_TITLE} (Latest)/" \
     "${entries[0]}"
 
 # Older kernel(s)
 for entry in "${entries[@]:1}"; do
     sed -i \
-        's/^title .*/title Fedora 44 (Workstation Edition) (Old)/' \
+        "s/^title .*/title ${OS_TITLE} (Old)/" \
         "$entry"
 done

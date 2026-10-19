@@ -14,19 +14,25 @@ fi
 export PATH="/usr/local/go/bin:$PATH"
 
 # Environment Modules / MPI
-source /etc/profile.d/modules.sh
-module load mpi/openmpi-x86_64
+if [ -f /etc/profile.d/modules.sh ]; then
+    source /etc/profile.d/modules.sh
+    module load mpi/openmpi-x86_64 2>/dev/null || true
+fi
 
-# Node Version Manager (NVM)
+# Node Version Manager (NVM) - Lazy loaded for fast shell startup
 export NVM_DIR="$HOME/.nvm"
 
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-    source "$NVM_DIR/nvm.sh"
-fi
+_load_nvm() {
+    unset -f nvm node npm npx corepack _load_nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
 
-if [ -s "$NVM_DIR/bash_completion" ]; then
-    source "$NVM_DIR/bash_completion"
-fi
+nvm() { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm() { _load_nvm; npm "$@"; }
+npx() { _load_nvm; npx "$@"; }
+corepack() { _load_nvm; corepack "$@"; }
 
 # Rust / Cargo
 if [ -f "$HOME/.cargo/env" ]; then
@@ -69,9 +75,6 @@ homelab() {
     fi
 }
 
-
-# Added by Antigravity CLI installer
-export PATH="/home/shanwis/.local/bin:$PATH"
-
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init bash)"
+# Atuin history
+[ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
+command -v atuin &>/dev/null && eval "$(atuin init bash)"
