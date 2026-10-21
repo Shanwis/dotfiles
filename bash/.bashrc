@@ -19,20 +19,10 @@ if [ -f /etc/profile.d/modules.sh ]; then
     module load mpi/openmpi-x86_64 2>/dev/null || true
 fi
 
-# Node Version Manager (NVM) - Lazy loaded for fast shell startup
+# Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
-
-_load_nvm() {
-    unset -f nvm node npm npx corepack _load_nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-}
-
-nvm() { _load_nvm; nvm "$@"; }
-node() { _load_nvm; node "$@"; }
-npm() { _load_nvm; npm "$@"; }
-npx() { _load_nvm; npx "$@"; }
-corepack() { _load_nvm; corepack "$@"; }
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Rust / Cargo
 if [ -f "$HOME/.cargo/env" ]; then
