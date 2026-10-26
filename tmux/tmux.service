@@ -1,0 +1,14 @@
+[Unit]
+Description=tmux terminal multiplexer
+Documentation=man:tmux(1)
+
+[Service]
+Type=forking
+ExecStart=%h/.local/bin/tmux-start.sh
+ExecStop=-/usr/bin/bash -c "if /usr/bin/tmux ls >/dev/null 2>&1; then %h/.tmux/plugins/tmux-resurrect/scripts/save.sh; fi"
+ExecStop=/usr/bin/tmux kill-server
+KillMode=mixed
+RestartSec=2
+
+[Install]
+WantedBy=default.target

@@ -25,6 +25,7 @@ warn() {
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/.config/atuin"
+mkdir -p "$HOME/.config/systemd/user"
 
 link_file() {
     local src="$1"
@@ -58,6 +59,8 @@ link_file "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
 link_file "$DOTFILES_DIR/alacritty" "$HOME/.config/alacritty"
 link_file "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 link_file "$DOTFILES_DIR/tmux/tmux-new.sh" "$HOME/.local/bin/tmux-new.sh"
+link_file "$DOTFILES_DIR/tmux/tmux-start.sh" "$HOME/.local/bin/tmux-start.sh"
+link_file "$DOTFILES_DIR/tmux/tmux.service" "$HOME/.config/systemd/user/tmux.service"
 link_file "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/niri" "$HOME/.config/niri"
 link_file "$DOTFILES_DIR/DankMaterialShell" "$HOME/.config/DankMaterialShell"
@@ -73,7 +76,12 @@ fi
 
 # Ensure scripts are executable
 chmod +x "$DOTFILES_DIR/tmux/tmux-new.sh" 2>/dev/null || true
+chmod +x "$DOTFILES_DIR/tmux/tmux-start.sh" 2>/dev/null || true
 chmod +x "$DOTFILES_DIR/obsidian/sync.sh" 2>/dev/null || true
 chmod +x "$DOTFILES_DIR/grub/shorten-grub-entries" 2>/dev/null || true
+
+# Enable tmux systemd user service for auto-start and graceful shutdown saves
+systemctl --user daemon-reload 2>/dev/null || true
+systemctl --user enable tmux.service 2>/dev/null || true
 
 success "All dotfiles successfully configured!"

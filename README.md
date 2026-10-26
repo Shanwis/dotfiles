@@ -52,8 +52,10 @@ dotfiles/
 ├── starship/           # Starship cross-shell prompt
 │   └── starship.toml   # Custom prompt layout with Catppuccin Mocha palette
 ├── tmux/               # tmux terminal multiplexer
-│   ├── .tmux.conf      # Catppuccin status bar, vim pane navigation, TPM plugins
-│   └── tmux-new.sh     # Interactive session picker using fzf and fd
+│   ├── .tmux.conf      # Catppuccin status bar, vim navigation, resurrect/continuum persistence
+│   ├── tmux-new.sh     # Interactive session picker using fzf and fd
+│   ├── tmux-start.sh   # Headless boot startup & clean session restoration script
+│   └── tmux.service    # User systemd service for zero-loss shutdown saves & auto-start
 ├── yazi/               # Terminal file manager
 │   ├── yazi.toml       # Manager layout and display settings
 │   ├── keymap.toml     # Custom keymaps (Ctrl+N for dragon drag-and-drop)
@@ -181,12 +183,12 @@ chmod +x ~/Data/PROJECTS/dotfiles/grub/shorten-grub-entries
 
 ## Component-Specific Instructions
 
-### tmux Plugins (TPM)
+### tmux Plugins & Persistence (TPM)
 TPM is automatically cloned and installed when launching tmux with this config.
-To manually install or refresh plugins inside tmux, press:
-```text
-prefix + I   (default prefix is Ctrl+b)
-```
+- To install or refresh plugins inside tmux: `prefix + I` (default prefix is `Ctrl+b`).
+- **Session Persistence**: Sessions, windows, splits, and pane contents are automatically saved every 10 minutes and restored on tmux launch via `tmux-resurrect` and `tmux-continuum`.
+- **Instant Save**: Press `prefix + Ctrl-s` anytime (e.g. before shutdown) to snapshot current state immediately.
+- **Manual Restore**: Press `prefix + Ctrl-r` to manually restore the last snapshot.
 
 ### Obsidian Configuration Backup & Sync
 To backup and sync settings from an active Obsidian vault into the repository:
