@@ -70,8 +70,9 @@ link_file "$DOTFILES_DIR/zathura" "$HOME/.config/zathura"
 link_file "$DOTFILES_DIR/atuin/config.toml" "$HOME/.config/atuin/config.toml"
 
 # Obsidian application wrapper symlink if AppImage exists
-if [ -f "$HOME/Applications/Obsidian-1.12.7.AppImage" ] && [ ! -e "$HOME/.local/bin/obsidian-app" ]; then
-    link_file "$HOME/Applications/Obsidian-1.12.7.AppImage" "$HOME/.local/bin/obsidian-app"
+obsidian_appimage="$(find "$HOME/Applications" -maxdepth 1 -name "Obsidian-*.AppImage" 2>/dev/null | sort -V | tail -n 1 || true)"
+if [ -n "$obsidian_appimage" ] && [ -f "$obsidian_appimage" ]; then
+    link_file "$obsidian_appimage" "$HOME/.local/bin/obsidian-app"
 fi
 
 # Ensure scripts are executable

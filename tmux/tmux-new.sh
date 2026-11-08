@@ -4,8 +4,12 @@ set -euo pipefail
 
 SEARCH_ROOTS=(
     "$HOME"
-    "/mnt/Data"
 )
+
+# Avoid duplicate traversal if /mnt/Data is already symlinked inside $HOME
+if [ -d "/mnt/Data" ] && [ "$(readlink -f "$HOME/Data" 2>/dev/null || true)" != "/mnt/Data" ]; then
+    SEARCH_ROOTS+=("/mnt/Data")
+fi
 
 # Use fd if available for fast multi-threaded search with gitignore awareness
 if command -v fd &>/dev/null; then

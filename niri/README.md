@@ -1,7 +1,19 @@
-# Config file for niri
+# Niri Configuration
 
-Just copy the file into `.config/niri/config.kdl` and you will have all the binding and setting I use in niri.
+Configuration files for the [niri](https://github.com/YaLTeR/niri) scrollable tiling Wayland compositor, integrated with [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell).
 
-I love how it feel using niri, especially as someone who is coming from GNOME.
+## Installation
+
+Symlink the entire `niri/` directory to `~/.config/niri` so that `config.kdl` and all modular includes in `dms/` (`outputs.kdl`, `cursor.kdl`, `layout.kdl`, `colors.kdl`, etc.) are properly linked:
+
+```bash
+ln -s ~/Data/PROJECTS/dotfiles/niri ~/.config/niri
+```
+
+Or copy the directory:
+
+```bash
+cp -r ~/Data/PROJECTS/dotfiles/niri ~/.config/niri
+```
 
 

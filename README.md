@@ -154,7 +154,7 @@ If you prefer to link individual components manually:
 
 ```bash
 # Ensure target directories exist
-mkdir -p ~/.config ~/.local/bin ~/.config/atuin
+mkdir -p ~/.config ~/.local/bin ~/.config/atuin ~/.config/systemd/user
 
 # Shell & Core Tools
 ln -s ~/Data/PROJECTS/dotfiles/bash/.bashrc ~/.bashrc
@@ -169,14 +169,21 @@ ln -s ~/Data/PROJECTS/dotfiles/DankMaterialShell ~/.config/DankMaterialShell
 # Multiplexer & CLI Tools
 ln -s ~/Data/PROJECTS/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/Data/PROJECTS/dotfiles/tmux/tmux-new.sh ~/.local/bin/tmux-new.sh
+ln -s ~/Data/PROJECTS/dotfiles/tmux/tmux-start.sh ~/.local/bin/tmux-start.sh
+ln -s ~/Data/PROJECTS/dotfiles/tmux/tmux.service ~/.config/systemd/user/tmux.service
 ln -s ~/Data/PROJECTS/dotfiles/nvim ~/.config/nvim
 ln -s ~/Data/PROJECTS/dotfiles/yazi ~/.config/yazi
 ln -s ~/Data/PROJECTS/dotfiles/zathura ~/.config/zathura
 
 # Make scripts executable
 chmod +x ~/Data/PROJECTS/dotfiles/tmux/tmux-new.sh
+chmod +x ~/Data/PROJECTS/dotfiles/tmux/tmux-start.sh
 chmod +x ~/Data/PROJECTS/dotfiles/obsidian/sync.sh
 chmod +x ~/Data/PROJECTS/dotfiles/grub/shorten-grub-entries
+
+# Enable tmux systemd user service for auto-start and zero-loss persistence
+systemctl --user daemon-reload
+systemctl --user enable tmux.service
 ```
 
 ---

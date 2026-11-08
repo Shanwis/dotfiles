@@ -6,8 +6,9 @@ if [ -z "$1" ]; then
 fi
 
 VAULT="$1"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOURCE="$HOME/Data/obsidian/$VAULT/.obsidian/"
-DEST=".obsidian"
+DEST="$SCRIPT_DIR/.obsidian"
 
 rsync -a --delete \
   --exclude='workspace.json' \
