@@ -21,7 +21,9 @@ Built on: **lazy.nvim** (plugin management), **LSP** (code intelligence),
 | `node` | pyright and other JS-based language servers |
 | `make` | builds telescope's C matcher and LuaSnip's regex engine |
 | `cargo-nextest` | runs Rust tests (the Rust test adapter requires it) |
-| Your language toolchains | `python`, `go`, `cargo`, a C compiler — as needed |
+| `java` (JDK ≥ 17) | Eclipse JDTLS runtime and Java compilation (JDK 21/25 supported) |
+| `mvn` / `gradle` | builds Java projects and resolves dependencies |
+| Your language toolchains | `python`, `go`, `cargo`, `java`, a C compiler — as needed |
 
 Everything else (language servers, formatters, linters, debug adapters) is
 installed automatically by Mason on first launch.
@@ -46,6 +48,8 @@ start working.
 ```
 init.lua                  Entry point: core settings, lazy.nvim bootstrap
 lazy-lock.json            Exact plugin versions (managed by lazy.nvim)
+ftplugin/
+  java.lua                Buffer-local Java setup: JDTLS, DAP bundles, test runner, keymaps
 lua/
   config/
     options.lua           Editor behavior: numbers, search, clipboard, diagnostics
@@ -59,6 +63,7 @@ lua/
     tree.lua              File tree (nvim-tree)
     telescope.lua         Fuzzy finding (files, grep, symbols, help)
     lsp.lua               Language servers and code intelligence (mason + lspconfig)
+    java.lua              Java language support spec (nvim-jdtls)
     completion.lua        Autocompletion and snippets (blink.cmp + LuaSnip)
     treesitter.lua        Syntax parsing, highlighting, indentation
     format.lua            Format on save (conform)
@@ -151,11 +156,12 @@ no `cd`, no `find | xargs grep`.
 ### Code intelligence (LSP) — `gr…`, `K`
 
 **What:** Language servers (pyright, rust-analyzer, gopls, clangd, bashls,
-lua_ls) that understand your whole project. Go to definition (`grd`), find
+lua_ls, jdtls) that understand your whole project. Go to definition (`grd`), find
 references (`grr`), rename everywhere (`grn`), code actions (`gra` — quick
 fixes, imports), hover docs (`K`), type definitions (`grt`), symbol search
-(`gO` file, `gW` workspace). Errors/warnings appear inline as you type and
-`[d` / `]d` walk through them.
+(`gO` file, `gW` workspace). Java also includes full decompilation of `.class`
+files (Fernflower), import organization, and refactorings via `nvim-jdtls`.
+Errors/warnings appear inline as you type and `[d` / `]d` walk through them.
 **Why:** This is the core of "IDE": the editor answers *what is this?*,
 *where is it used?* and *what is wrong?* instantly. Renaming a function across
 50 files is one keypress with zero risk of missing an occurrence.
@@ -183,7 +189,7 @@ features stand on.
 ### Format on save (conform) — `<leader>f`
 
 **What:** Formats every save with the language's standard tool (stylua, ruff,
-rustfmt, goimports+gofumpt, clang-format, shfmt), falling back to LSP
+rustfmt, goimports+gofumpt, clang-format, shfmt, google-java-format), falling back to LSP
 formatting. Also works on visual selections.
 **Why:** Code style stops being a review topic. Consistent formatting also
 makes diffs meaningful — only real changes show up.
@@ -208,7 +214,7 @@ granularity — the workflow that keeps commits clean and reviewable.
 **What:** Real debuggers via the Debug Adapter Protocol: breakpoints (`db`),
 conditional breakpoints (`dB`), continue (`dc`), step over/into/out
 (`do`/`di`/`dO`), a UI with variables/watches/stack/REPL that opens
-automatically (`du` toggles). Python, Go, C/C++ and Rust are wired up.
+automatically (`du` toggles). Python, Go, C/C++, Rust and Java are wired up.
 **Why:** When "read the code" fails, stepping through the actual runtime with
 live values is the shortest path to the answer. It also pairs with tests:
 debug the failing test at the exact failing line.
@@ -217,7 +223,7 @@ debug the failing test at the exact failing line.
 
 **What:** Runs tests in-process and shows a result tree: nearest test (`Tn`),
 file (`Tf`), all (`Ta`), debug nearest (`Td`), summary (`Ts`), output panel
-(`To`). Supports pytest, `go test` and `cargo nextest`.
+(`To`). Supports pytest, `go test`, `cargo nextest` and JUnit (via neotest-java).
 **Why:** The feedback loop — edit, run *the* test you care about, see the
 failure output — without leaving the editor or re-running a whole suite.
 
@@ -281,6 +287,17 @@ Leader is **Space**. Press it and wait for which-key to show the live menu.
 | `<leader>du` | Toggle debug UI |
 | `<leader>Tn` / `Tf` / `Ta` | Run nearest / file / all tests |
 | `<leader>Td` / `Ts` / `To` | Debug test / summary / output |
+
+### Java refactoring & actions (`<leader>j…`)
+
+| Keys | Action |
+|---|---|
+| `<leader>jo` | Organize imports |
+| `<leader>jv` | Extract variable (normal / visual) |
+| `<leader>jc` | Extract constant (normal / visual) |
+| `<leader>jm` | Extract method (visual) |
+| `<leader>jt` | Run test class (JDTLS) |
+| `<leader>jn` | Run nearest test method (JDTLS) |
 
 ---
 

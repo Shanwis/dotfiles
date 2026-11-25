@@ -19,6 +19,7 @@ return {
           c = { 'clang_format' },
           cpp = { 'clang_format' },
           sh = { 'shfmt' },
+          java = { 'google-java-format' },
         },
       }
 

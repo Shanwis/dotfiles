@@ -6,6 +6,7 @@ return {
       'nvim-neotest/neotest-python',
       'fredrikaverpil/neotest-golang',
       'rouge8/neotest-rust',
+      'rcasia/neotest-java',
     },
     config = function()
       require('neotest').setup {
@@ -19,6 +20,7 @@ return {
           require('neotest-rust') {
             args = { '--no-capture' },
           },
+          require('neotest-java') {},
         },
       }
     end,

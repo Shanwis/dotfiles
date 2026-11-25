@@ -32,6 +32,7 @@ return {
           { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
           { '<leader>d', group = '[D]ebug' },
           { '<leader>T', group = '[T]est' },
+          { '<leader>j', group = '[J]ava', mode = { 'n', 'v' } },
           { 'gr', group = 'LSP Actions', mode = 'n' },
         },
       }

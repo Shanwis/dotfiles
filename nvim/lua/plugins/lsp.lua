@@ -29,6 +29,7 @@ return {
               'clangd',
               'bash-language-server',
               'lua-language-server',
+              'jdtls',
               -- formatters
               'stylua',
               'shfmt',
@@ -36,12 +37,15 @@ return {
               'gofumpt',
               'goimports',
               'ruff',
+              'google-java-format',
               -- linters
               'shellcheck',
               -- debug adapters
               'debugpy',
               'codelldb',
               'delve',
+              'java-debug-adapter',
+              'java-test',
             },
           }
         end,
